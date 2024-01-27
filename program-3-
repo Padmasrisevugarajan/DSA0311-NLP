@@ -1,0 +1,31 @@
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+nltk.download('punkt')
+nltk.download('wordnet')
+
+def morphological_analysis(text):
+    # Tokenize the text into words
+    words = word_tokenize(text)
+
+    # Initialize the WordNet lemmatizer
+    lemmatizer = WordNetLemmatizer()
+
+    # Perform lemmatization on each word
+    lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+
+    return lemmatized_words
+
+# Example text
+text = "The cats are running and the dogs are barking loudly."
+
+# Perform morphological analysis
+result = morphological_analysis(text)
+
+# Display the original and lemmatized words
+print(f"Original Text: {text}")
+print(f"Lemmatized Words: {result}")
+ output:
+ Original Text: The cats are running and the dogs are barking loudly.
+Lemmatized Words: ['The', 'cat', 'are', 'running', 'and', 'the', 'dog', 'are', 'barking', 'loudly', '.']
+
