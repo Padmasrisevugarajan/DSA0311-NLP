@@ -1,0 +1,18 @@
+import re
+
+def main():
+    # Sample sentence
+    sentence = "The cat and the dog are playing in the backyard."
+
+    # Find words starting with the letter 'c'
+    words_starting_with_c = re.findall(r'\b[cC]\w+', sentence)
+    
+    if words_starting_with_c:
+        print("Words starting with 'c':")
+        for word in words_starting_with_c:
+            print(word)
+    else:
+        print("No words starting with 'c' found in the sentence.")
+
+if __name__ == "__main__":
+    main()
